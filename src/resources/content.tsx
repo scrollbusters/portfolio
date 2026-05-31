@@ -1,91 +1,90 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Text } from "@once-ui-system/core";
 
+// ─────────────────────────────────────────
+// AGENCY IDENTITY
+// ─────────────────────────────────────────
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "ScrollBusters",
+  lastName: "",
+  name: "ScrollBusters",
+  role: "Content · Video · Design",
+  avatar: "/images/sb-logo-light.png",
+  email: "scrollbusters@gmail.com",
+  location: "Asia/Karachi",
+  languages: [],
 };
 
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false,
+  title: <>Work with ScrollBusters</>,
+  description: <>Get your all-in-one social media solution.</>,
 };
 
+// ─────────────────────────────────────────
+// SOCIAL LINKS
+// ─────────────────────────────────────────
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.instagram.com/scrollbusters",
     essential: true,
   },
   {
     name: "Email",
     icon: "email",
-    link: `mailto:${person.email}`,
+    link: "mailto:scrollbusters@gmail.com",
+    essential: true,
+  },
+  {
+    name: "WhatsApp",
+    icon: "whatsapp",
+    link: "https://wa.me/923130804405",
     essential: true,
   },
 ];
 
+// ─────────────────────────────────────────
+// HOME PAGE
+// ─────────────────────────────────────────
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/sb-cover.png",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: "ScrollBusters — Content · Video · Design",
+  description:
+    "Shariah-compliant social media content, video production, brand identity, and Shopify development that stops the scroll and drives real results.",
+  headline: (
+    <>
+      We stop<br />the scroll.
+    </>
+  ),
   featured: {
-    display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    display: false,
+    title: "Featured Work",
+    href: "/work",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      <Text as="span" onBackground="neutral-weak">
+        Content · Video · Design
+      </Text>
+      <br />
+      Built for brands that want attention — and results.
+    </>
   ),
 };
 
+// ─────────────────────────────────────────
+// ABOUT PAGE — Agency focused, not personal CV
+// ─────────────────────────────────────────
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: "About — ScrollBusters",
+  description:
+    "ScrollBusters is a shariah-compliant content and design agency specialising in social media, video, brand identity, and Shopify development.",
   tableOfContent: {
     display: true,
     subItems: false,
@@ -95,59 +94,88 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://wa.me/923130804405",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "The Agency",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        ScrollBusters is a Lahore-based content and creative agency built for brands that want to
+        cut through the noise. Our name says it all — we create content that stops people mid-scroll
+        and compels them to pay attention.
+        <br />
+        <br />
+        Everything we make is shariah-compliant, goal-oriented, and built to perform — not just to
+        look good. From organic social media and short-form video to full brand identities and
+        Shopify stores, we handle the full creative stack.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "What We Do",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Social Media Content",
+        timeframe: "Organic & Paid",
+        role: "Reels · Carousels · Stories · Thumbnails",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Scroll-stopping content crafted for Instagram, TikTok, Facebook, and YouTube — designed
+            to grow audiences and drive engagement organically.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Every post is strategy-first: we align content with your brand voice, audience
+            behaviour, and platform algorithm to maximise reach and retention.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Video Production",
+        timeframe: "Short & Long Form",
+        role: "Ads · Reels · Brand Films · Product Videos",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            From concept to final cut — we handle scripting, direction, editing, and motion
+            graphics for social ads, product showcases, and brand films.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Our video content is built to hold attention from the first frame, with hooks,
+            pacing, and visual storytelling calibrated for each platform.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Brand Identity & Design",
+        timeframe: "Logo · Guidelines · Packaging",
+        role: "Visual Identity Systems",
+        achievements: [
+          <>
+            Complete brand identity systems — logo design, typography, colour palettes, and usage
+            guidelines that give your brand a clear, consistent visual language.
+          </>,
+          <>
+            Packaging design that stands out on shelf and screen, built with the same attention to
+            detail and strategic intent as the rest of your brand.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Shopify Development",
+        timeframe: "Store Design & Build",
+        role: "E-commerce · Custom Themes · Conversion Optimised",
+        achievements: [
+          <>
+            Custom Shopify stores designed for conversion — clean UX, fast load times, and a visual
+            identity that matches your brand from first click to checkout.
+          </>,
+          <>
+            We handle everything from store setup and product page design to full custom theme
+            development and ongoing support.
           </>,
         ],
         images: [],
@@ -155,147 +183,122 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false,
     title: "Studies",
-    institutions: [
-      {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
-    ],
+    institutions: [],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Tools & Capabilities",
     skills: [
       {
-        title: "Figma",
+        title: "Creative & Design",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Adobe Premiere Pro, After Effects, Photoshop, Illustrator, Figma — full creative
+            production stack for video, motion, and static design work.
+          </>
         ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        tags: [],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Development",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Shopify, custom theme development, Liquid, HTML/CSS — we build e-commerce experiences
+            that look the part and convert.
+          </>
         ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Strategy",
+        description: (
+          <>
+            Social media strategy, content calendars, paid ad management, audience research — we
+            approach every brief with a results-first mindset, not just aesthetics.
+          </>
+        ),
+        tags: [],
+        images: [],
       },
     ],
   },
 };
 
+// ─────────────────────────────────────────
+// BLOG — disabled
+// ─────────────────────────────────────────
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Blog — ScrollBusters",
+  description: "Insights on content, design, and social media from the ScrollBusters team.",
 };
 
+// ─────────────────────────────────────────
+// WORK / PORTFOLIO
+// ─────────────────────────────────────────
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  title: "Our Work — ScrollBusters",
+  description:
+    "A selection of content, video, branding, and development work by ScrollBusters.",
 };
 
+// ─────────────────────────────────────────
+// GALLERY — Design assets, stills, graphics
+// ─────────────────────────────────────────
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  title: "Gallery — ScrollBusters",
+  description: "A visual archive of design work, content stills, and brand assets by ScrollBusters.",
+  // ─── SWAP THESE WITH YOUR OWN IMAGES ───
+  // Drop your files into /public/images/gallery/
+  // Supported: horizontal (16:9) and vertical (9:16 or 4:5) orientations
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      alt: "Social media content",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
+      alt: "Brand identity design",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      alt: "Video production still",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/vertical-2.jpg",
+      alt: "Packaging design",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/horizontal-3.jpg",
+      alt: "Ad campaign creative",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
+      alt: "Logo design",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/horizontal-4.jpg",
+      alt: "Shopify store design",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/vertical-4.jpg",
+      alt: "Content design",
       orientation: "vertical",
     },
   ],
